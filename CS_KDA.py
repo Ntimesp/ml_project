@@ -33,7 +33,7 @@ class CS_KDA():
         
         #K(x_i,\eta)
         for i in range(n):
-            pic=self.read_img(os.path.join(self.path,self.files[i]))
+            pic=self.read_img(os.path.join(path,files[i]))
             self.Kv[i]=self.kernel(self.mean,pic)
         
     def read_img(self,name):

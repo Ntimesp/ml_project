@@ -3,5 +3,5 @@ LFW.zip
 imposters
 .vscode
 .ipynb_checkpoints
-template
 test
+__pycache__
