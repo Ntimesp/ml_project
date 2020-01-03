@@ -48,6 +48,7 @@ def ica(data): #input data as an n*m matrix#
 			W[:, i] = W[:, i] / np.linalg.norm(W[:, i])
 		if (np.linalg.norm(W - W_old) <= 1e-25):
 			return W
+
 def sampling(dir, scale):#dir denotes the situation of your files, and scale denotes your scale of samples#
 	for parents, dirnames, filenames in os.walk(dir):
 		num = len(filenames)
@@ -115,10 +116,3 @@ def show_filter(filters, eg, n):#n represents the scale of filters
 				if (after[ki, li, i] > 0):
 					img_after[ki, li] = img_after[ki, li] + math.pow(2, i)
 	return(img_after)
-
-
-
-dirr = 'D:/LFW/test'
-train_filters(dirr)
-
-
