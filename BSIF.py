@@ -5,6 +5,7 @@ import cv2
 import scipy.linalg as sl
 import matplotlib.pyplot as plt
 from scipy.signal import convolve2d
+from tqdm import tqdm
 
 def whiten(sample, n): #input samples as an r*m matrix, n represents the number of eigenvalues we select#
 	cov = np.cov(sample)
@@ -70,7 +71,7 @@ def train_filters(dir):
 	ss = [3,5,7,9,11,13,15,17]
 	res = np.zeros((scale_img[0], scale_img[1], 8))
 	filterss = []
-	for k in ss:
+	for k in tqdm(ss):
 		samples = sampling(dir, k)
 		v = whiten(samples, 8)
 		wt = np.dot(v, samples)

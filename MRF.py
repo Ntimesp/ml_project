@@ -29,5 +29,5 @@ def mrf(target):
                 maxs=s
                 mini=i
                 minj=j
-
+                
     return target[mini:mini+m1,minj:minj+n1]
